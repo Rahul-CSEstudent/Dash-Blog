@@ -1,115 +1,84 @@
-<<<<<<< HEAD
-import React from 'react'
-import styled from 'styled-components'
-
-const MenuBar = () => {
-  return (
-    <div>
-
-        <ul>
-            <li>
-                <a href='#'>
-                    <div className="icon">
-                        
-                    </div>
-                    <div className="name"><span data-text="Home">Home</span></div>
-                </a>
-            </li>
-            <li>
-                <a href='#'>
-                    <div className="icon"></div>
-                    <div className="name"><span data-text="Blogs">Blogs</span></div>
-                </a>
-            </li>
-            <li>
-                <a href='#'>
-                    <div className="icon"></div>
-                    <div className="name"><span data-text="Services">Services</span></div>
-                </a>
-            </li>
-            <li>
-                <a href='#'>
-                    <div className="icon"></div>
-                    <div className="name"><span data-text="About">About us</span></div>
-                </a>
-            </li>
-            <li>
-                <a href='#'>
-                    <div className="icon"></div>
-                    <div className="name"><span data-text="contact">Contact</span></div>
-                </a>
-            </li>
-            <li>
-                <a href='#'>
-                    <div className="icon"></div>
-                    <div className="name"><span data-text="About">About</span></div>
-                </a>
-            </li>
-        </ul>
-    </div>
-  )
-}
-
-export default MenuBar;
-
-
-=======
 import styled from "styled-components";
 import Logo from "./Logo";
+import Image from 'next/image'
+import About from "../../assets/about.png";
+import Blog from "../../assets/blogicon.png";
+import Contact from "../../assets/Contact.png";
+import Home from "../../assets/home.png";
+import Service from "../../assets/Services.png";
+
 
 const MenuBar = () => {
   return (
     <List>
       <Logo />
       <div style={{ width: "100%" }}>
+
+
         <ListItems>
           <a href="#">
-            <div className="icon"></div>
+          <div className="icon">
+              <Img><Image src = {Home} alt = "Home"  /></Img>
+              <Img><Image src = {Home} alt = "Home"  /></Img>
+            </div>
             <div className="name">
               <span data-text="Home">Home</span>
             </div>
+           
+
           </a>
         </ListItems>
+
         <ListItems>
           <a href="#">
-            <div className="icon"></div>
+            <div className="icon">
+              <Img><Image src = {Blog} alt = "blog"  /></Img>
+              <Img><Image src = {Blog} alt = "blog"  /></Img>
+            </div>
             <div className="name">
               <span data-text="Blogs">Blogs</span>
             </div>
           </a>
         </ListItems>
+
         <ListItems>
           <a href="#">
-            <div className="icon"></div>
+            <div className="icon">
+            <align>
+              <Img><Image src = {Service} alt = "service"  /></Img>
+              <Img><Image src = {Service} alt = "service"  /></Img>
+            </align>  
+            </div>
             <div className="name">
               <span data-text="Services">Services</span>
             </div>
           </a>
         </ListItems>
+
         <ListItems>
           <a href="#">
-            <div className="icon"></div>
+            <div className="icon">
+              <Img><Image src = {About} alt = "about"  /></Img>
+              <Img><Image src = {About} alt = "about"  /></Img>
+            </div>
             <div className="name">
               <span data-text="About">About us</span>
             </div>
           </a>
         </ListItems>
+
         <ListItems>
           <a href="#">
-            <div className="icon"></div>
+            <div className="icon">
+              <Img><Image src = {Contact} alt = "contact"  /></Img>
+              <Img><Image src = {Contact} alt = "contact"  /></Img>
+              </div>
             <div className="name">
               <span data-text="contact">Contact</span>
             </div>
           </a>
         </ListItems>
-        <ListItems>
-          <a href="#">
-            <div className="icon"></div>
-            <div className="name">
-              <span data-text="About">About</span>
-            </div>
-          </a>
-        </ListItems>
+
       </div>
       <FinalDiv>©️ 2022 Dash Blog</FinalDiv>
     </List>
@@ -117,6 +86,7 @@ const MenuBar = () => {
 };
 
 const List = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -148,5 +118,19 @@ const FinalDiv = styled.div`
   color: #575757;
 `;
 
+const Img = styled.div`
+  width: 25px;
+  height: 30px;
+  margin: 3px;
+`
+
+const align = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+
+
+
 export default MenuBar;
->>>>>>> 018e4c133db6e14c848d771604c323728dc9f787
+
