@@ -1,5 +1,6 @@
 import styles from "./GlowingCube.module.css";
 
+
 const GlowingCube = () => {
   return (
     <div className={styles.margined}>
@@ -12,7 +13,10 @@ const GlowingCube = () => {
           <span style={{ "--i": 3 }}></span>
         </div>
       </div>
+      <div className={styles.text}>Dash Blog</div>
     </div>
+
+    
   );
 };
 
