@@ -1,14 +1,11 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import sidebar from '../components/sidebar'
-
-
+import Head from "next/head";
+import Image from "next/image";
+import Sidebar from "../components/Sidebar";
 
 export default function Home() {
   return (
     <div>
-    <sidebar />
+      <Sidebar />
     </div>
-
-  )
+  );
 }

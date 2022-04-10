@@ -1,11 +1,12 @@
-import React from 'react'
-import glowingCube from './sidebar/glowingCube'
+import React from "react";
+import GlowingCube from "./sidebar/GlowingCube";
 
-
-const sidebar = () => {
+const Sidebar = () => {
   return (
-    <div><glowingCube /></div>
-  )
-}
+    <div>
+      <GlowingCube />
+    </div>
+  );
+};
 
-export default sidebar
+export default Sidebar;

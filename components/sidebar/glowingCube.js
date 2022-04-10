@@ -1,20 +1,19 @@
-import React from 'react'
+import styles from "./GlowingCube.module.css";
 
-const glowingCube = () => {
+const GlowingCube = () => {
   return (
-    <div>
-    <div class="cube">
-    <div class="top"></div>
-    <div>
-        <span style="--i:0;"></span>
-        <span style="--i:1;"></span>
-        <span style="--i:2;"></span>
-        <span style="--i:3;"></span>
-       
+    <div className={styles.margined}>
+      <div className={styles.cube}>
+        <div className={styles.top}></div>
+        <div>
+          <span style={{ "--i": 0 }}></span>
+          <span style={{ "--i": 1 }}></span>
+          <span style={{ "--i": 2 }}></span>
+          <span style={{ "--i": 3 }}></span>
+        </div>
+      </div>
     </div>
-</div>
-    </div>
-  )
-}
+  );
+};
 
-export default glowingCube
+export default GlowingCube;
