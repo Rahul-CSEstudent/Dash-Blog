@@ -1,12 +1,16 @@
 import React from 'react'
+import styled from 'styled-components'
 
 const MenuBar = () => {
   return (
     <div>
+
         <ul>
             <li>
                 <a href='#'>
-                    <div className="icon"></div>
+                    <div className="icon">
+                        
+                    </div>
                     <div className="name"><span data-text="Home">Home</span></div>
                 </a>
             </li>
@@ -46,3 +50,5 @@ const MenuBar = () => {
 }
 
 export default MenuBar;
+
+
