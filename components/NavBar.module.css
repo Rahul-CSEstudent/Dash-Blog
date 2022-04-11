@@ -1,0 +1,46 @@
+
+.nav{
+    background: white;
+    height: 0rem;
+    min-height: 100vh;
+    overflow: hidden;
+    margin-left: 20px;
+}
+
+.nav .menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.nav .brand a{
+    padding: 1rem 0;
+    text-decoration: none;
+    font-size: 1.6rem;
+    display: block;
+    font-family: 'Bree serif', serif;
+}
+
+.nav .items{
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+
+}
+
+.nav .items .link{
+    padding: 1.4rem 1rem;
+    font-size: 1.1rem;
+}
+
+.nav .socialText{
+    padding: 1.4rem ;
+
+}
+
+@media only screen and (max-width: 600px){
+    .nav .menu, .nav .items{
+        flex-direction: column;
+    }
+}

@@ -25,8 +25,7 @@ const LogoDiv = styled.div`
   width: 100%;
   height: 5rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
+ 
 `;
 
 // this is the rotations animation of the cube
