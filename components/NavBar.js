@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "./Logo";
 import styles from "./NavBar.module.css";
-import Contact from "./Contact";
+
 
 const handleClick = () =>{
     var x = document.getElementById("NavBar");
