@@ -1,15 +1,31 @@
 import React from "react";
 import Logo from "./Logo";
 import styles from "./NavBar.module.css";
+import Contact from "./Contact";
 
+const handleClick = () =>{
+    var x = document.getElementById("NavBar");
+    if(x.style.height === "10vh"){
+      x.setAttribute("style","height:100vh");
+    }
+    else{
+      x.setAttribute("style","height:10vh");
+    }
+}
+ 
 
 const Sidebar = () => {
   return (
     <div className={styles.body}>
-    <nav className={styles.nav}>
+    <nav className={styles.nav} id="NavBar">
       <div className={styles.menu}>
         <div className={styles.brand}>
           <a href="#" className="text-gray">Dash Blog</a>
+        </div>
+        <div className={styles.toggle}>
+          <div className={styles.toggleIcons}>
+            <i className="fa fas fa-bars" onClick={handleClick}></i>
+          </div>
         </div>
         <div>
           <ul className={styles.items}>
@@ -26,7 +42,7 @@ const Sidebar = () => {
               <a href = "#"> About </a>
             </li>
             <li className={styles.link}>
-              <a href = "#"> Contact </a>
+              <a href = "/Contact"> Contact </a>
             </li>
           </ul>
         </div>
