@@ -1,38 +1,4 @@
 
-.nav{
-    background: white;
-    height: 0rem;
-    min-height: 10vh;
-    overflow: hidden;
-    margin-left: 20px;
-    transition: height 1s ease-in-out;
-}
-
-.nav .menu{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.nav .toggle{
-    position: absolute;
-    top: 0%;
-    width: 90%;
-    cursor: pointer;
-    display: none;
-}
-
-.nav .toggle .toggleIcons{
-    display: flex;
-    justify-content: flex-end;
-    padding: 1.7rem 0;
-}
-
-.nav .toggle .toggleIcons i{
-    font-size: 1.4rem;
-    color:#3f4954;
-}
 
 .nav .brand a{
     padding: 1rem 0;
