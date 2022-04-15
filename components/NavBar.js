@@ -7,13 +7,14 @@ import {
   FaBars,
   FaTimes,
 } from "react-icons/fa";
+import Logo from "./Logo";
 
 const Sidebar = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
   const mobileListener = () => {
-    if (window.innerWidth < 800) {
+    if (window.innerWidth < 863) {
       setIsMobile(true);
     } else {
       setIsMobile(false);
@@ -30,9 +31,10 @@ const Sidebar = () => {
   }, []);
 
   return (
-    <div className="sticky top-0 z-10">
-      <div className="flex justify-between items-center bg-white h-20">
-        <div className="text-gray py-4 no-underline text-2xl block font-bree text-primary ml-3">
+    <div className="z-10">
+      <div className="fixed top-0 flex justify-between items-center bg-white h-20 z-30 w-screen">
+        <div className="text-gray py-4 no-underline text-3xl block font-bree text-primary ml-8">
+          {/* <Logo /> */}
           <a href="/">Dash Blog</a>
         </div>
         {isMobile && (
@@ -73,7 +75,7 @@ const Sidebar = () => {
       </div>
       <div
         className={
-          "fixed w-screen bg-white transition-[top] ease-in-out" +
+          "fixed w-screen bg-white transition-[top] ease-in-out duration-1000 z-20" +
           (isOpen && isMobile ? " top-20" : " -top-full")
         }
         style={{ height: "calc(100vh - 5rem)" }}
@@ -109,34 +111,4 @@ const Sidebar = () => {
   );
 };
 
-// const Logo = () => {
-//   return (
-
-//   )};
-
-const List = (props) => {
-  return (
-    <ul
-      className={
-        "list-none flex m-0 font-liv" + props.type == "vertical"
-          ? " flex-col"
-          : " flex-row"
-      }
-    >
-      {props.lists.map((list, index) => (
-        <ListItem key={index} href={list[1]}>
-          {list[0]}
-        </ListItem>
-      ))}
-    </ul>
-  );
-};
-
-const ListItem = (props) => {
-  return (
-    <li className="py-6 text-lg relative hover:bg-hoverGreen hover:text-white text-black transition-colors delay-300 ease-in-out">
-      <a href={props.href}> {props.children} </a>
-    </li>
-  );
-};
 export default Sidebar;
