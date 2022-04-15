@@ -11,7 +11,7 @@ const MainSite = () => {
   return (
     <div className={styles.body}>
         <section className={styles.section}>
-          <Image src={bg} id='bg'></Image>
+          <img src={bg} id='bg' height={1000} width={400}></img>
           <Image src={moon} id='moon'></Image>
           <Image src={mountain} id='mountain'></Image>
           <Image src={road} id='road'></Image>
