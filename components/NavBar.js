@@ -1,99 +1,142 @@
-import React from "react";
-import styles from "./NavBar.module.css";
+import { useState, useEffect } from "react";
 import {
   FaFacebookF,
   FaInstagram,
   FaTwitter,
   FaYoutube,
   FaBars,
+  FaTimes,
 } from "react-icons/fa";
 
-const handleClick = () => {
-  var x = document.getElementById("NavBar");
-  if (x.style.height === "10vh") {
-    x.setAttribute("style", "height:100vh");
-  } else {
-    x.setAttribute("style", "height:10vh");
-  }
-};
-
-/*
-
-.nav .toggle .toggleIcons{
-    display: flex;
-    justify-content: flex-end;
-    padding: 1.7rem 0;
-}
-
-.nav .toggle .toggleIcons i{
-    font-size: 1.4rem;
-    color:#3f4954;
-} */
-
 const Sidebar = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const mobileListener = () => {
+    if (window.innerWidth < 768) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  };
+
+  const handleOpen = () => {
+    setIsOpen(!isOpen);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", mobileListener);
+    mobileListener();
+  }, []);
+
   return (
-    <div>
-      <nav
-        className="bg-white transition-[height] ease-in-out delay-1000 ml-5 overflow-hidden"
-        style={{ height: "10vh" }}
-        id="NavBar"
-      >
-        {" "}
-        {/* .nav */}
-        <div className="flex flex-row justify-between flex-wrap">
-          {" "}
-          {/* .menu */}
-          <div className={styles.brand}>
-            <a href="#" className="text-gray">
-              Dash Blog
-            </a>
+    <div className="sticky top-0 z-10">
+      <div className="flex justify-between items-center bg-white h-20">
+        <div className="text-gray py-4 no-underline text-2xl block font-bree text-primary ml-3">
+          <a href="/">Dash Blog</a>
+        </div>
+        {isMobile && (
+          <div
+            className="flex justify-center items-center h-20 w-20"
+            onClick={handleOpen}
+          >
+            {isOpen ? <FaTimes /> : <FaBars />}
           </div>
-          <div className="absolute top-0 width-[90%] cursor-pointer hidden">
-            {" "}
-            {/* .toggle */}
-            <div className="flex justify-end px-[1.7rem]" onClick={handleClick}>
-              {" "}
-              {/* .toggleIcons */}
-              <FaBars />
+        )}
+        {isMobile || (
+          <>
+            <div className="flex justify-center items-center font-liv text-xl">
+              <div className="h-20 flex justify-center items-center px-5 hover:bg-hoverGreen hover:text-white">
+                <a href="/">Home</a>
+              </div>
+              <div className="h-20 flex justify-center items-center px-5 hover:bg-hoverGreen hover:text-white">
+                <a href="/blog">Blog</a>
+              </div>
+              <div className="h-20 flex justify-center items-center px-5 hover:bg-hoverGreen hover:text-white">
+                <a href="/services">Services</a>
+              </div>
+              <div className="h-20 flex justify-center items-center px-5 hover:bg-hoverGreen hover:text-white">
+                <a href="/about">About</a>
+              </div>
+              <div className="h-20 flex justify-center items-center px-5 hover:bg-hoverGreen hover:text-white">
+                <a href="/contact">Contact Us</a>
+              </div>
             </div>
+            <div className="flex justify-evenly h-20 items-center">
+              <FaFacebookF className="mx-3 hover:text-hoverGreen" />
+              <FaInstagram className="mx-3 hover:text-hoverGreen" />
+              <FaTwitter className="mx-3 hover:text-hoverGreen" />
+              <FaYoutube className="mx-3 hover:text-hoverGreen" />
+            </div>
+          </>
+        )}
+      </div>
+      <div
+        className={
+          "fixed w-screen bg-white transition-[top] ease-in-out" +
+          (isOpen && isMobile ? " top-20" : " -top-full")
+        }
+        style={{ height: "calc(100vh - 5rem)" }}
+      >
+        <div
+          className="w-screen flex justify-center items-center flex-col font-liv text-xl"
+          style={{ height: "calc(100vh - 10rem)" }}
+        >
+          <div className="h-16 flex justify-center items-center">
+            <a href="/">Home</a>
           </div>
-          <div>
-            <ul className={styles.items}>
-              <li className={styles.link}>
-                <a href="#"> Home </a>
-              </li>
-              <li className={styles.link}>
-                <a href="#"> Blogs </a>
-              </li>
-              <li className={styles.link}>
-                <a href="#"> Services </a>
-              </li>
-              <li className={styles.link}>
-                <a href="#"> About </a>
-              </li>
-              <li className={styles.link}>
-                <a href="/Contact"> Contact </a>
-              </li>
-            </ul>
+          <div className="h-16 flex justify-center items-center">
+            <a href="/blog">Blog</a>
           </div>
-          <div className={styles.socialText}>
-            <a href="#">
-              <FaFacebookF />
-            </a>
-            <a href="#">
-              <FaInstagram />
-            </a>
-            <a href="#">
-              <FaTwitter />
-            </a>
-            <a href="#">
-              <FaYoutube />
-            </a>
+          <div className="h-16 flex justify-center items-center">
+            <a href="/services">Services</a>
+          </div>
+          <div className="h-16 flex justify-center items-center">
+            <a href="/about">About</a>
+          </div>
+          <div className="h-16 flex justify-center items-center">
+            <a href="/contact">Contact Us</a>
           </div>
         </div>
-      </nav>
+        <div className="flex justify-evenly h-20 items-center">
+          <FaFacebookF />
+          <FaInstagram />
+          <FaTwitter />
+          <FaYoutube />
+        </div>
+      </div>
     </div>
   );
 };
 
+// const Logo = () => {
+//   return (
+
+//   )};
+
+const List = (props) => {
+  return (
+    <ul
+      className={
+        "list-none flex m-0 font-liv" + props.type == "vertical"
+          ? " flex-col"
+          : " flex-row"
+      }
+    >
+      {props.lists.map((list, index) => (
+        <ListItem key={index} href={list[1]}>
+          {list[0]}
+        </ListItem>
+      ))}
+    </ul>
+  );
+};
+
+const ListItem = (props) => {
+  return (
+    <li className="py-6 text-lg relative hover:bg-hoverGreen hover:text-white text-black transition-colors delay-300 ease-in-out">
+      <a href={props.href}> {props.children} </a>
+    </li>
+  );
+};
 export default Sidebar;

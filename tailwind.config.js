@@ -12,6 +12,10 @@ module.exports = {
         bree: ["Bree Serif", "serif"],
         liv: ["Livvic", "sans-serif"],
       },
+      colors: {
+        primary: "#3f4954",
+        hoverGreen: "#104f55",
+      },
     },
   },
   plugins: [],
