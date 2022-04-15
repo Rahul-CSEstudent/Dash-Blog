@@ -13,7 +13,7 @@ const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const mobileListener = () => {
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 800) {
       setIsMobile(true);
     } else {
       setIsMobile(false);
