@@ -13,12 +13,10 @@ const Logo = () => {
           <CubeSide i={3}></CubeSide>
         </CubeDiv>
       </Cube>
-      <LogoText>Dash Blog</LogoText>
+      {/* <LogoText>Dash Blog</LogoText> */}
     </LogoDiv>
   );
 };
-
-// styles
 
 // this will wrap the whole logo
 const LogoDiv = styled.div`
